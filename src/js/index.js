@@ -1,8 +1,11 @@
 // css
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "../css/style.css";
 import "../css/menu.css";
 
 // js
+import $ from 'jquery';
+import { Modal } from 'bootstrap';
 import "./menu.js";
 import Potrace from "./potrace.js";
 import "./pressure-drawing.js";
@@ -11,7 +14,7 @@ const version = '0.592'; // 版本號
 const upm = 1000;
 const userAgent = navigator.userAgent.toLowerCase();
 const pressureDelta = 1.3;		// 筆壓模式跟一般模式的筆寬差異倍數 (舊筆壓模式用)
-const dbName = fdrawer.dbName || 'FontDrawerDB'; // 使用 fdrawer.dbName，如果未定義則使用預設值
+const dbName = window.fdrawer.dbName || 'FontDrawerDB'; // 使用 window.fdrawer.dbName，如果未定義則使用預設值
 const storeName = 'FontData';
 const events = [];
 
@@ -158,7 +161,7 @@ async function loadSettings() {
 		gridType: await loadFromDB('gridType', '3x3grid'),					// 格線類型，預設為 3x3grid
 		oldPressureMode: await loadFromDB('oldPressureMode', 'N') == 'Y',	// 啟用舊版筆壓模式，預設為 N
 		fontNameEng: await loadFromDB('fontNameEng') || 'MyFreehandFont',
-		fontNameCJK: await loadFromDB('fontNameCJK') || fdrawer.fontNameCJK,
+		fontNameCJK: await loadFromDB('fontNameCJK') || window.fdrawer.fontNameCJK,
 		noFixedWidthFlag: await loadFromDB('noFixedWidthFlag', 'N') == 'Y',	// 比例寬輸出，預設為 N
 		saveAsTester: await loadFromDB('saveAsTester', 'Y') == 'Y', 		// 是否為測試輸出，預設為 Y
 		testSerialNo: await loadFromDB('testSerialNo', 1) * 1,				// 測試輸出序號，預設為 1
@@ -327,12 +330,12 @@ async function createFont(glyphs, gidMap, verts, ccmps) {
 	});
 
 	for (var group in font.names) {
-		font.names[group].fontFamily[fdrawer.fontLang] = settings.fontNameCJK;
-		font.names[group].fullName[fdrawer.fontLang] = settings.fontNameCJK;
+		font.names[group].fontFamily[window.fdrawer.fontLang] = settings.fontNameCJK;
+		font.names[group].fullName[window.fdrawer.fontLang] = settings.fontNameCJK;
 	}
 
 	font.tables.os2.achVendID = 'ZIHI';
-	font.tables.os2.ulCodePageRange1 = fdrawer.codePage; // CodePage
+	font.tables.os2.ulCodePageRange1 = window.fdrawer.codePage; // CodePage
 	font.tables.os2.usWinAscent = 920; // Windows ascent
 	font.tables.os2.usWinDescent = 200; // Windows ascent
 	font.tables.os2.xAvgCharWidth = upm;
@@ -378,10 +381,10 @@ $(document).ready(async function () {
 	const $progressText = $('#progress-text');
 	const download_container = document.getElementById('download_container');
 	const settings_container = document.getElementById('settings_container');
-	const settings_containerr_modal = new bootstrap.Modal(settings_container);
+	const settings_containerr_modal = new Modal(settings_container);
 	const hint_container = document.getElementById('hint_container');
 	const listup_container = document.getElementById('listup_container');
-	const listup_container_modal = new bootstrap.Modal(listup_container);
+	const listup_container_modal = new Modal(listup_container);
 
 	// 初始化 IndexedDB
 	initDB().then(async () => {

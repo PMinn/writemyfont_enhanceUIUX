@@ -9,12 +9,16 @@ const languages = {
 
 module.exports = Object.keys(languages).map(function (language) {
     return {
-        entry: `./src/js/main.${language}.js`,
-        output: {
-            filename: `main.${language}.[contenthash].js`,
-            path: path.resolve(__dirname, 'dist'),
-            clean: true
+        entry:{
+            "fdrawer": `./src/js/fdrawer.${language}.js`,
+            "glyphlist": `./src/js/glyphlist.${language}.js`,
+            "index": `./src/js/index.js`
         },
+        output: {
+            filename: `[name].${language}.[contenthash].js`,
+            path: path.resolve(__dirname, 'dist')
+        },
+        mode: 'production',
         target: ["web", "es2020"],
         module: {
             rules: [

@@ -12,22 +12,7 @@ FontDrawer 是一個基於 HTML5 Canvas 的字型繪製工具，允許使用者�
 
 ## 版本紀錄
 
-請見[版本紀錄](ChangeLog.md)。
-
-## 技術細節
-
-- **主要技術**：
-  - HTML5 Canvas
-  - JavaScript
-  - IndexedDB 用於儲存字型資料
-  - [potrace.js](https://github.com/kilobtye/potrace) （GPL 2.0授權）用於將繪製的圖像轉換為 SVG。
-  - [opentype.js](https://github.com/opentypejs/opentype.js) （MIT授權）用於生成 OTF 字型檔案。
-
-- **檔案結構**：
-  - `fontdrawer.js`：主要的字型繪製和生成邏輯。
-  - `index.html`：繁體中文界面。
-  - `ja.html`：日文界面。
-  - `glist/`：用於產生字表的工具。
+請見[版本紀錄](doc/ChangeLog.md)。
 
 ## 注意事項
 
@@ -44,6 +29,9 @@ FontDrawer 是一個基於 HTML5 Canvas 的字型繪製工具，允許使用者�
   - 本專案程式碼開源授權，但由於引用之專案授權條款不同，請自行評估引用時須遵守之各授權規範。並請勿侵害以下商標等權益：
     - 網站名稱的「字嗨」為在台灣正式註冊的商標。
     - 產出之字型檔，VendorID所填入的「ZIHI」值，為本人於微軟註冊的字型廠商代碼。
+
+## 開發者指引
+請見[開發者指引](doc/developer-guide.md)。
 
 ## 貢獻者
 
@@ -72,22 +60,8 @@ FontDrawer は、HTML5 Canvas を使用したフォント作成ツールで、�
 
 ## 更新履歴
 
-詳しくは[更新履歴](ChangeLog.md)ページ。
+詳しくは[更新履歴](doc/ChangeLog.md)ページ。
 
-## 技術詳細
-
-- **主な技術**：
-  - HTML5 Canvas
-  - JavaScript
-  - IndexedDB を使用してフォントデータを保存
-  - [potrace.js](https://github.com/kilobtye/potrace) （GPL 2.0ライセンス）を使用して描画した画像を SVG に変換。
-  - [opentype.js](https://github.com/opentypejs/opentype.js) （MITライセンス）を使用して OTF フォントファイルを生成。
-
-- **ファイル構成**：
-  - `fontdrawer.js`：フォント描画と生成の主要なロジック。
-  - `index.html`：繁体字中国語インターフェース。
-  - `ja.html`：日本語インターフェース。
-  - `glist/`：文字表を生成するためのツール。
 
 ## 注意事項
 
