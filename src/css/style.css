@@ -19,14 +19,14 @@ body {
 
 @font-face {
 	font-family: LessonOne;
-	src: url('LessonOne-Regular.woff');
+	src: url('../fonts/LessonOne-Regular.woff');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: GenYoExt;
-	src: url('GenYoExt3-R.woff');
+	src: url('../fonts/GenYoExt3-R.woff');
 	font-weight: normal;
 	font-style: normal;
 }
