@@ -19,14 +19,14 @@ body {
 
 @font-face {
 	font-family: LessonOne;
-	src: url('LessonOne-Regular.woff');
+	src: url('../fonts/LessonOne-Regular.woff');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: GenYoExt;
-	src: url('GenYoExt3-R.woff');
+	src: url('../fonts/GenYoExt3-R.woff');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -144,15 +144,9 @@ screen and (max-width: 380px) {
 
 /* 繪圖畫布在上方 */
 #lineWidthSlider {
-	width: 120px;
+	width: 100px;
 	display: inline-block;
 	vertical-align: middle;
-}
-
-#lineWidthValue {
-	display: inline-block;
-	width: 1.5em;
-	text-align: right;
 }
 
 #brushSelector img {
@@ -160,6 +154,17 @@ screen and (max-width: 380px) {
 	height: 28px;
 	line-height: 32px;
 	margin-top: 2px;
+}
+
+#button-container {
+	position: relative;
+	align-self: center;
+	display: flex;
+}
+
+#button-container .split {
+	width: 1px;
+	background-color: #ccc;
 }
 
 #navi-container {
@@ -249,4 +254,18 @@ screen and (max-width: 380px) {
 
 #importDataFile {
 	display: none;
+}
+
+.btn:has(>svg) {
+	font-size: .8em;
+}
+
+#scaleRateValue {
+	display: inline-block;
+	width: 3em;
+	text-align: center;
+}
+
+.nav-item {
+	cursor: pointer;
 }

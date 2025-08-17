@@ -1,5 +1,4 @@
 #menu {
-    background-color: #fff;
     overflow-x: auto;
     width: calc(100vw - 1rem);
     margin: .5rem;
@@ -29,4 +28,20 @@
     opacity: 0.8;
     font-size: 0.8em;
     margin-top: auto;
+}
+
+/* 寬度大於1025的裝置 選單限縮在500 */
+@media only screen and (min-width: 1025px) {
+
+    /* 平板橫向 */
+    #menu_nav {
+        margin: 0 auto;
+        max-width: 500px;
+        width: 100vw;
+    }
+
+    #menu {
+        margin: .5rem auto;
+        max-width: 500px;
+    }
 }
